@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[compress,handout]{beamer}
+\documentclass[11pt,aspectratio=169,compress,mathserif]{beamer}
+
+% lenovo native resolution is 1600x900 px, 16/9 -> 160mm by 90mm
+% 1280x1024 px 5/4.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Packages
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{iftex}
+
+%**** Encoding and Font **************************
+
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern} % Postscript layout of CM with T1 coding
+\else
+  \ifLuaTeX
+    % \usepackage[utf8]{luainputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{lmodern} % Postscript layout of CM with T1 coding
+    %
+    \hypersetup{pdfencoding=auto}
+    %
+    % \usepackage{fontspec} % spoil circle to square and textasteriskcentered
+    % \usefontheme{professionalfonts}
+    % \usepackage{unicode-math}
+    % \setmathfont{Latin Modern Math}
+    % \usepackage{fontawesome}
+  \fi
+\fi
+
+%**** Language ***********************************
+
+\usepackage[frenchb]{babel}
+%\usepackage[english]{babel}
+% \usepackage{frenchle} % compatibility?
+
+%** Beamer ***************************************
+
+\usepackage{beamerthemefabrice}
+
+\usepackage{pgfpages}
+%\pgfpagelayout{resize}[a4paper,border shrink=5mm,landscape]
+
+%**** Tikz ***************************************
+
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes,backgrounds,arrows}
+
+\usepackage{graphics}
+
+%**** Textpos ************************************
+
+\usepackage[absolute,overlay]{textpos}
+%\TPshowboxestrue
+\TPshowboxesfalse
+\TPGrid{16}{9}
+% \textblockorigin{10mm}{10mm}
+
+%**** Tabular ************************************
+
+\usepackage{array}
+%% \usepackage{color}
+\usepackage{colortbl}
+%% \usepackage{multirow}
+%% \usepackage{dcolumn}
+%% 
+%% \usepackage{cellspace}
+%% \setlength{\cellspacebottomlimit}{1pt} 
+%% \setlength{\cellspacetoplimit}{1pt} 
+
+
+%**** Color **************************************
+
+\usepackage{xcolor}
+
+%**** Units and number ***************************
+
+% \usepackage{unite}
+
+%*************************************************
+
+%\usepackage{alltt}
+\usepackage{fancyvrb}
+\usepackage[framemethod=TikZ]{mdframed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End: 
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

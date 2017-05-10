@@ -1,0 +1,117 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{beamerouterthemefabrice}[2007/09/07]
+
+\mode<presentation>
+
+% split and infolines
+
+%f% \setbeamercolor{section in head/foot}{parent=palette quaternary}
+%f% \setbeamercolor{subsection in head/foot}{parent=palette primary}
+
+\setbeamercolor{author in head/foot}{parent=section in head/foot}
+\setbeamercolor{title in head/foot}{parent=subsection in head/foot}
+
+%f% \usesectionheadtemplate
+%f%   {\hfill\insertsectionhead}
+%f%   {\hfill\color{fg!50!bg}\insertsectionhead}
+
+% Head Line
+
+\defbeamertemplate*{headline}{fabrice theme}
+{%
+  % nothing
+}
+
+% Foot Line
+
+\defbeamertemplate*{footline}{fabrice theme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+    %~~(\insertshortinstitute)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}% title
+    \usebeamerfont{title in head/foot}{\insertshorttitle} 
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}% date
+    %\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% shadow
+
+%f% \setbeamercolor{frametitle}{parent=subsection in head/foot}
+%f% \setbeamercolor{frametitle right}{parent=section in head/foot}
+
+%f% \pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
+%f%   color(0pt)=(frametitle.bg);
+%f%   color(\paperwidth)=(frametitle right.bg)}
+%f% 
+%f% \AtBeginDocument{
+%f%   \pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
+%f%     color(0pt)=(bg);
+%f%     color(4pt)=(black!50!bg)}
+%f% }
+%f% 
+%f% %\addtobeamertemplate{headline}
+%f% %{}
+%f% %{%
+%f% %  \vskip-0.2pt
+%f% %  \pgfuseshading{beamer@topshade}
+%f% %  \vskip-2pt
+%f% %}
+%f% 
+%f% % Frame Title
+%f% 
+%f% \defbeamertemplate*{frametitle}{fabrice theme}
+%f% {%
+%f%   \nointerlineskip%
+%f%   \vskip-2pt%
+%f%   \hbox{\leavevmode
+%f%     \advance\beamer@leftmargin by -12bp%
+%f%     \advance\beamer@rightmargin by -12bp%
+%f%     \beamer@tempdim=\textwidth%
+%f%     \advance\beamer@tempdim by \beamer@leftmargin%
+%f%     \advance\beamer@tempdim by \beamer@rightmargin%
+%f%     \hskip-\Gm@lmargin\hbox{%
+%f%       \setbox\beamer@tempbox=\hbox{\begin{minipage}[b]{\paperwidth}%
+%f%           \vbox{}\vskip-.75ex%
+%f%           \leftskip0.3cm%
+%f%           \rightskip0.3cm plus1fil\leavevmode
+%f%           \insertframetitle%
+%f%           \ifx\insertframesubtitle\@empty%
+%f%             \strut\par%
+%f%           \else
+%f%             \par{\usebeamerfont*{framesubtitle}{\usebeamercolor[fg]{framesubtitle}\insertframesubtitle}\strut\par}%
+%f%           \fi%
+%f%           \nointerlineskip
+%f%           \vbox{}%
+%f%           \end{minipage}}%
+%f%       \beamer@tempdim=\ht\beamer@tempbox%
+%f%       \advance\beamer@tempdim by 2pt%
+%f%       \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\beamer@tempdim}
+%f%         \usebeamercolor{frametitle right}
+%f%         \pgfpathrectangle{\pgfpointorigin}{\pgfpoint{\paperwidth}{\beamer@tempdim}}
+%f%         \pgfusepath{clip}
+%f%         \pgftext[left,base]{\pgfuseshading{beamer@frametitleshade}}
+%f%       \end{pgfpicture}
+%f%       \hskip-\paperwidth%
+%f%       \box\beamer@tempbox%
+%f%     }%
+%f%     \hskip-\Gm@rmargin%
+%f%   }%
+%f%   \nointerlineskip
+%f%     \vskip-0.2pt
+%f%     \hbox to\textwidth{\hskip-\Gm@lmargin\pgfuseshading{beamer@topshade}\hskip-\Gm@rmargin}
+%f%     \vskip-2pt
+%f% }
+
+\mode
+<all>
+
+% end
