@@ -1,0 +1,113 @@
+
+\begin{frame}
+  \frametitle{Circuit Simulation: Nodal Analysis}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{Circuit $\equiv$ Device's Graph} \\[1em]
+        \includegraphics[width=1.\textwidth]{figures/network.pdf}
+      \end{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \textit{Roughly \ldots} \\[1em]
+      \begin{enumerate}
+      \item Apply \textbf{Kirchhoff's} circuit laws
+        \begin{itemize}
+        \item Kirchhoff's current law (KCL) \\
+          $\sum {I}_k = 0$ for each node \\
+          \textit{conservation of the electron flow} \\[.5em]
+        \item Kirchhoff's voltage law (KVL) \\
+          $\sum {V}_k = 0$ for each cycle \\
+          \textit{think that is a closed path} \\[1em]
+        \end{itemize}
+      \item Apply \textbf{Device Equation} $f(V_k,I_k) = 0$ \\
+        e.g.\@ Ohm Law for resistor $V = R I$ \\[.5em]
+        Can be \textbf{Complex} e.g.\@ Capacitor, Inductor \\
+        and \textbf{Non-Linear} e.g. Diode !
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Circuit Simulation: Nodal Analysis Example}
+  \begin{columns}
+    \begin{column}{.3\textwidth}
+      \begin{center}
+        \includegraphics[width=1.\textwidth]{figures/nodal-analysis.pdf}
+      \end{center}
+    \end{column}
+    \begin{column}{.7\textwidth}
+      Let apply the recipes: % Kirchhoff's circuit laws
+      $$
+      \begin{pmatrix}
+        \frac{1}{R_1}+\frac{1}{R_2} & -\frac{1}{R_2} & 1 \\
+        -\frac{1}{R_2} & \frac{1}{R_2}+\frac{1}{R_3} & -1 \\
+        1 & -1 & 0
+      \end{pmatrix}
+      { \color{red!80}
+      \begin{bmatrix}
+        V_1 \\
+        V_2 \\
+        I_{V_{s1}}
+      \end{bmatrix}
+      }
+      =
+      \begin{bmatrix}
+        I_{s1} \\
+        0 \\
+        V_{s1}
+      \end{bmatrix}
+      $$
+      Then \textbf{solve} this \textbf{system of linear equations} \\[1em]
+      There are \textbf{algorithms} to build theses \textbf{matrices} \\
+      Usually matrices are \textbf{sparses} \\[1em]
+      \textbf{Complex} therms for Capacitor, Inductor e.g.\@ $V^\star = \frac{1}{sC} I^\star$ % $V^\star = sL I^\star$
+      \\[.5em]
+      \textbf{Non linear} e.g.\@ Shockley Diode Model $I = I_s \left( e^{\frac{V}{n V_T}} - 1 \right)$
+      \\[1em]
+      {\tiny
+        To go further \href{http://qucs.sourceforge.net/tech/technical.html}{QUCS Technical Papers}
+        or \href{http://qucs.sourceforge.net/docs/technical/technical.pdf}{PDF}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Circuit Simulation: Several kinds of Analysis}
+  \begin{columns}
+    \begin{column}[t]{.6\textwidth}
+      Principal Analyses \\[1em]
+      \begin{itemize}
+      \item DC Analysis \\
+        \textit{Operating Point and DC Sweep} \\
+        Compute node's voltages at $t=0$
+        \textbf{cf. infra} \\[1em]
+      \item AC Small-Signal Analysis \\
+        \textbf{Transfer Function} \\
+        Frequency Analysis $V(\omega)$, cf. Laplace Transform \\
+        \textit{small means Taylor Series} \\[1em]
+      \item Transient Analysis \\
+        Simulate over time $V(t)$ \\
+        \textbf{Integrator}
+      \end{itemize}
+    \end{column}
+    \begin{column}[t]{.4\textwidth}
+      More specific ones \\[1em]
+      \begin{itemize}
+      \item Pole-Zero Analysis
+      \item Small-Signal Distortion Analysis
+      \item Sensitivity Analysis
+      \item Noise Analysis
+      \item etc.\@
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

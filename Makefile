@@ -7,10 +7,14 @@
 JOB_NAME = $(notdir ${PWD})
 
 MASTER = master
-#MASTER = texte
+
 TEXFILES = $(wildcard *.tex)
-FIGURES_PY = $(wildcard figures/*.py)
-FIGURES_PDF = $(patsubst %.py, %.pdf, ${FIGURES_PY})
+
+# FIGURES_PY = $(wildcard figures/*.py)
+# FIGURES_PDF = $(patsubst %.py, %.pdf, ${FIGURES_PY})
+
+CIRCUITS_M4 = $(wildcard figures/*.m4)
+CIRCUITS_PDF = $(patsubst %.m4, %.pdf, ${CIRCUITS_M4})
 
 # VPATH = parts:packages
 
@@ -36,27 +40,26 @@ LATEX = ${LATEX_COMMAND} ${INTERACTION}
 #
 ####################################################################################################
 
-all: pdf figures
+all: pdf
 
-# force
-f:
-	touch ${MASTER}.tex
-	$(MAKE)	all
-
-figures: ${FIGURES_PDF}
+# ${FIGURES_PDF}
+figures: ${CIRCUITS_PDF}
 
 pdf: ${JOB_NAME}.pdf
 
 ${JOB_NAME}.pdf: ${MASTER}.pdf
 	cp ${MASTER}.pdf ${JOB_NAME}.pdf
 
-#${MASTER}.pdf: ${TEXFILES} ${FIGURES_PDF}
-${MASTER}.pdf: ${TEXFILES}
+${MASTER}.pdf: ${TEXFILES} figures
 	${LATEX} ${MASTER}
 #	${LATEX} ${MASTER}
 
-%.pdf : %.py
-	python $^
+####################################################################################################
+
+# force
+f:
+	touch ${MASTER}.tex
+	$(MAKE)	all
 
 fast: ${TEXFILES}
 	${LATEX} ${MASTER}
@@ -64,6 +67,14 @@ fast: ${TEXFILES}
 clean:
 	-rm *.aux *.bbl *.blg *.dvi *.log *.lof *.lot *.toc *.idx *.lgpl *.nav *.out *.snm *.vrb \
 	${JOB_NAME}.pdf
+
+####################################################################################################
+
+%.pdf : %.py
+	python $^
+
+%.pdf : %.m4
+	circuit-macros-generator $^ figures
 
 ####################################################################################################
 

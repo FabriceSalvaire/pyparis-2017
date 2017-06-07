@@ -6,16 +6,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title[]{PySpice}
+\title[]{Circuit Simulation using Python}
 \author[F.~Salvaire]{Fabrice~Salvaire}
 % \institute{} % hack since author is used in the PDF metadata
-\date[00 jun 17]{PyData 2017 \\ {\tiny ...}}
+\date[13 June 17]{PyParis 2017}
 
-% \logo{\pgfuseimage{...}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\Cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
+\pgfdeclareimage[interpolate=true,height=3cm]{ControlledSource}{figures/controlled-source.pdf}
+% \logo{\pgfuseimage{}}
+\titlegraphic{\pgfuseimage{ControlledSource}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -29,10 +27,12 @@
 
 \begin{frame} % Title Page Frame
   \titlepage
-  \begin{textblock}{12}(.5,7.75)
-    \tiny%
-    \texttt{fabrice.salvaire@orange.fr} \\
-    \url{https://github.com/FabriceSalvaire/pyconfr-2014} \\
+  \begin{textblock}{12}(.2,7.5)
+    % \tiny%
+    \fontsize{5pt}{6pt}\selectfont
+    \url{http://pyparis.org} \\[.5em]
+    \texttt{\url{https://www.fabrice-salvaire.fr/en/about/contact}} \\ % contact fabrice.salvaire.fr
+    \url{https://github.com/FabriceSalvaire/pyparis-2017} \\[.5em]
     CC BY-NC-SA 3.0
   \end{textblock}
 \end{frame}
@@ -60,8 +60,8 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
-\input{introduction}
+\input{circuit-simulation}
+\input{spice}
 
 \end{document}
 
