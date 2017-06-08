@@ -1,7 +1,10 @@
 .PS
+
 cct_init
+
 elen = 0.75
 epsilon = 1e-3
+
 Origin: Here
   source(up_ elen,I); llabel(,I_{s1},)
   line up epsilon then right elen*2/3; dot
@@ -20,4 +23,5 @@ Node2: "2" ljust above;
     reversed(`source', right_ elen,V); llabel(,V_{s1},)
     line right epsilon then down to Node2
   }
+
 .PE
