@@ -65,8 +65,11 @@ fast: ${TEXFILES}
 	${LATEX} ${MASTER}
 
 clean:
-	-rm *.aux *.bbl *.blg *.dvi *.log *.lof *.lot *.toc *.idx *.lgpl *.nav *.out *.snm *.vrb \
+	-rm -f \
+	*.aux *.bbl *.blg *.dvi *.log *.lof *.lot *.toc *.idx *.lgpl *.nav *.out *.snm *.vrb \
+	_region_.* \
 	${JOB_NAME}.pdf
+	-rm -rf  master.prv
 
 ####################################################################################################
 
