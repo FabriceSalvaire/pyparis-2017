@@ -27,14 +27,16 @@
 
 \begin{frame} % Title Page Frame
   \titlepage
-  \begin{textblock}{12}(.2,7.5)
+  \begin{textblock}{12}(.2,7)
     % \tiny%
-    \fontsize{5pt}{6pt}\selectfont
+    \fontsize{5pt}{5pt}\selectfont
     \url{http://pyparis.org} \\[.5em]
     \texttt{\url{https://www.fabrice-salvaire.fr/en/about/contact}} \\ % contact fabrice.salvaire.fr
     \url{https://github.com/FabriceSalvaire/pyparis-2017} \\[.5em]
-    CC BY-NC-SA 3.0
-  \end{textblock}
+    CC BY-NC-SA 3.0 \\[2em]
+    \fontsize{7pt}{7pt}\selectfont
+    \url{https://pyspice.fabrice-salvaire.fr/pyparis-2017-talk.pdf}
+\end{textblock}
 \end{frame}
 
 \logo{} % hack to clear the logo
@@ -60,19 +62,23 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% ???
+% \input{bio}
+
 \section{Why Python is the right language for engineering ?}
 
-\section{An introduction to Circuit Simulation}
+\section{An Introduction to Circuit Simulation}
 \input{circuit-simulation}
 
 \section{SPICE an Industrial Standard}
 \input{spice}
 \input{spice-clone}
 
-\section{PySpice the birdge between SPICE and Python}
+\section{PySpice the Bridge between SPICE and Python}
 \input{pyspice}
+\input{related-projects}
 
-\section{Modelica a language for simulation}
+\section{Modelica a Language for Simulation}
 \input{modelica}
 
 \end{document}
