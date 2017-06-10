@@ -1,4 +1,70 @@
 
+\begin{frame}
+  \frametitle{Modelica: A language for modelling of complex physical systems}
+  % What is Modelica ?
+  Modelica in few words
+  \begin{itemize}
+  \item A \textbf{language} and a \textbf{Standard Library}
+  \item Object-Oriented and Equation based
+  \item Multi-domains
+  \item Non-proprietary
+  \item Developed by the non-profit \textbf{Modelica Association}
+  \item initiated in September 1996 by Hilding Elmqvist
+  \item First version on Sept. 1997  $\rightarrow$ 3.4 on April 2017
+  \item Commercial front-ends: e.g.\@ Dymola
+  \item Open Source front-ends: \textbf{OpenModelica} and \textbf{JModelica} \\[1em]
+  \end{itemize}
+  % \begin{columns}
+  %   \begin{column}[t]{.65\textwidth}
+  % \end{column}
+  % \begin{column}[t]{.35\textwidth}
+  %   Front-Ends
+  %   \begin{itemize}
+  %   \item Commercial : e.g.\@ Dymola
+  %   \item Open Source : \\
+  %     \begin{itemize}
+  %     \item OpenModelica
+  %     \item JModelica
+  %     \end{itemize}
+  %   \end{itemize}
+  % \end{column}
+  % \end{columns}
+  {\tiny To go further \url{https://www.modelica.org}}
+  \begin{textblock}{6}(13,7)
+    \includegraphics[width=2cm]{images/modelica-logo.jpg}
+  \end{textblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Modelica: Bouncing-ball example}
+  \fontsize{8pt}{8pt}\selectfont
+\begin{Verbatim}[commandchars=\\\{\}]
+\colorG{model} BouncingBall
+  \colorG{parameter} Real e=0.7 \colorR{"coefficient of restitution"};
+  \colorG{parameter} Real g=9.81 \colorR{"gravity acceleration"};
+  Real h(start=1) \colorR{"height of ball"};
+  Real v \colorR{"velocity of ball"};
+  Boolean flying(start=true) \colorR{"true, if ball is flying"};
+  Boolean impact;
+  Real v_new;
+
+\colorM{equation}
+  impact = h <= 0;
+  \colorB{der}(v) = \colorM{if} flying \colorM{then} -g \colorM{else} 0;
+  \colorB{der}(h) = v;
+
+  \colorO{// Triggered when one of theses conditions are true}
+  \colorM{when} \{h <= 0 \colorM{and} v <= 0, impact\} \colorM{then}
+    v_new = \colorM{if} \colorB{edge}(impact) \colorM{then} -e*\colorB{pre}(v) \colorM{else} 0;
+    flying = v_new > 0;
+    \colorB{reinit}(v, v_new);
+  \colorM{end when};
+
+\colorG{end} BouncingBall;
+\end{Verbatim}
+  \normalsize
+\end{frame}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "master"
