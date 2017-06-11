@@ -11,7 +11,7 @@
       \item An early \textbf{open source} software initiative (Public Domain)
       \item \textbf{Used in undergraduate courses}
       \item \textbf{Evolved to a worldwide standard} % integrated circuit simulator
-      \item \textbf{IEEE Milestone} on February 4, 2011
+      \item \textbf{IEEE Milestone} on 2011
       \item Berkeley released spice3f5 on 1993 % 6
       \item Superseded by commercial and open source forks \\[1em]
       \end{itemize}
@@ -39,7 +39,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{SPICE: Netlist}
+  \frametitle{SPICE: Netlist as Input}
   \begin{columns}
     \begin{column}{.5\textwidth}
       \begin{center}
@@ -79,12 +79,13 @@ AC-coupled amplifier
   \begin{columns}
     \begin{column}{.5\textwidth}
       \begin{center}
-        \includegraphics[height=6cm]{figures/1N5919B-1.pdf}
+        \includegraphics[height=65mm]{figures/1N5919B-1.pdf}
       \end{center}
     \end{column}
     \begin{column}{.5\textwidth}
-      \fontsize{4.25pt}{4.25pt}\selectfont
-      \begin{Verbatim}[commandchars=\\\{\}]
+      \begin{center}
+        \fontsize{4.25pt}{4.25pt}\selectfont
+\begin{Verbatim}[commandchars=\\\{\}]
 * http://www.onsemi.com/pub_link/Collateral/1N5919BRL.SP3
 \colorR{.SUBCKT d1n5919brl 2 1}
 **************************************
@@ -127,8 +128,9 @@ AC-coupled amplifier
 *VJ=1 M=0.5 EG=1.11 XTI=3 FC=0.5
 *KF=0 AF=1 BV=inf IBV=1e-3 TNOM=27
 \colorR{.ENDS d1n5919brl}
-      \end{Verbatim}
-      \normalsize
+\end{Verbatim}
+        \normalsize
+      \end{center}
     \end{column}
   \end{columns}
 \end{frame}

@@ -4,7 +4,8 @@
   % What is Modelica ?
   Modelica in few words
   \begin{itemize}
-  \item A \textbf{language} and a \textbf{Standard Library}
+    % \item A \textbf{language} and a \textbf{Standard Library}
+  \item \textbf{Language} + \textbf{Standard Library}
   \item Object-Oriented and Equation based
   \item Multi-domains Modelling
   \item Non-proprietary
@@ -163,7 +164,7 @@
   \item \textbf{OpenModelica} \hfill {\small \url{https://www.openmodelica.org}}
     \begin{itemize}
     \item Supported by a non-profit organization : Open Source Modelica Consortium (OSMC)
-    \item OSMC Public License $\approx$ GPL V3
+    \item OSMC Public License $\approx$ GPLv3
     \item \textbf{Provide an IDE} : OMEdit
     \item \textbf{Based on \Cpp{} and Corba}
     \item V1.12 released on May 2017
@@ -173,8 +174,8 @@
     \begin{itemize}
     \item Started at Department of Automatic Control, Lund University
     \item Supported by Modelon AB
-    \item GPL V3
-    \item \textbf{Based on Java and Python}
+    \item GPLv3
+    \item \textbf{Based on C, Java and Python}
     \item V2.0 released on May 2017
     \end{itemize}
   \end{enumerate}
@@ -182,7 +183,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{OMEdit Screenshots}
+  \frametitle{OpenModelica: OMEdit Screenshots}
   \begin{columns}
     \begin{column}[c]{.5\textwidth}
       \begin{center}
@@ -199,9 +200,9 @@
 
 \begin{frame}[fragile]
   \frametitle{Using OpenModelica with Python}
-  \begin{columns}[T]
+  \begin{columns}
     \begin{column}{.5\textwidth}
-      \fontsize{9pt}{9pt}\selectfont
+      \fontsize{8.5pt}{8.5pt}\selectfont
 \begin{Verbatim}[commandchars=\\\{\}]
 \colorB{from} OMPython \colorB{import} ModelicaSystem
 
@@ -231,12 +232,16 @@ pylab.ylabel(\colorO{'[height]'})
   \end{columns}
   \vspace{.5em}
   \centerline{\textbf{Model is compiled to C}}
-  \begin{flushright}
-    \tiny%
-    To go further
-    \href{https://www.openmodelica.org/doc/OpenModelicaUsersGuide/latest/ompython.html}{OpenModelica Python Interface}
-    % https://www.fabrice-salvaire.fr/en/blog/first-steps-with-openmodelica/
-  \end{flushright}
+  \vspace{1em}
+  \begin{textblock}{6}(11,7.5)
+    {\tiny%
+      \begin{tabbing}
+        To go further \=%
+        \href{https://www.openmodelica.org/doc/OpenModelicaUsersGuide/latest/ompython.html}{OpenModelica Python Interface} \\
+        \> \href{http://www.jmodelica.org/api-docs/usersguide/2.0/index.html}{Jmodelica doc}
+        % https://www.fabrice-salvaire.fr/en/blog/first-steps-with-openmodelica/
+      \end{tabbing}}
+  \end{textblock}
 \end{frame}
 
 %%% Local Variables:
