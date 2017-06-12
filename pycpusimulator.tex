@@ -1,0 +1,47 @@
+
+\begin{frame}
+  \frametitle{PyCpuSimulator: Simulate CPU using micro-code}
+  \begin{center}
+    \url{https://github.com/FabriceSalvaire/PyCpuSimulator} \\[2em]
+    \begin{tikzpicture}%
+      [node distance=10mm,
+      start chain=going right,
+      >=stealth',
+      punktchain/.style={
+        rectangle,
+        rounded corners,
+        % fill=black!10,
+        draw=black, very thick,
+        text width=7em,
+        minimum height=3em,
+        text centered,
+        on chain},
+      line/.style={draw, thick, <-},
+      every join/.style={->, thick,shorten >=1pt},
+      ]
+      \node[punktchain, join] {CPU Datasheet Extractor};
+      \node[punktchain, join] {YAML Instruction Set};
+      \node[punktchain, join] {Micro-Code Interpreter};
+    \end{tikzpicture}
+    \vspace{1em}
+  \end{center}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      Features
+      \begin{itemize}
+      \item Micro-Code Language to describe instruction
+      \item Opcode Decoder using Decision Tree
+      \item Read HEX firmware format
+      \item AVR Core CPU simulation is ongoing
+      \end{itemize}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      {\small \alert{If you want to play with Core \ldots}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:

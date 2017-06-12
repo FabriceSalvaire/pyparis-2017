@@ -8,9 +8,14 @@
   \item But analysis tools are outdated : e.g. TCL Spice
   \item \textbf{I want Python !!!}
   \end{itemize}
-  \vspace{1.5em}
-  \centerline{\alert{$\Longrightarrow$ Plug NgSpice to Python}}
-  \vspace{1.5em}
+  % \vspace{1.5em}
+  % \centerline{\alert{$\Longrightarrow$ Plug NgSpice to Python}}
+  % \vspace{1.5em}
+  \begin{center}
+    \begin{tikzpicture}
+      \node[rectangle, rounded corners, fill=gray!10, minimum height=2em] at (0,0) {\alert{$\Longrightarrow$ Plug NgSpice to Python}};
+    \end{tikzpicture}
+  \end{center}
   \textbf{How to get it ?}
   \begin{itemize}
   \item \url{https://pyspice.fabrice-salvaire.fr}
@@ -147,6 +152,34 @@
   \centerline{\small \href{https://pyspice.fabrice-salvaire.fr/examples/ngspice-shared/voltage-divider.html}{NgSpice API example}}
 \end{frame}
 
+\begin{frame}
+  \frametitle{PySpice: Some features}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      Implemented
+      \begin{itemize}
+      \item Devices handled by a powerfull meta-class mechanism
+      \item Units
+      \item Netlist Library Manager
+      \item Oriented Object API for Netlist
+      \item Oriented Object API for Waveforms
+      \item Current Probe
+      \item Bode diagrams
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \alert{Must to have}
+      \begin{itemize}
+      \item More examples
+      \item Improved API
+      \item more Analysis Tools
+      \item Additional Plots e.g. eye-diagram etc.\@
+      \item Full featured shared API example
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{PySpice: Example's Documentation Generator}
   \centerline{\textbf{PySpice has some learning materials}}
@@ -161,6 +194,8 @@
       \item Concept: Use directive comments \\
         to add text and figure blocks
       \end{itemize}
+      \vspace{1em}
+      \alert{However Notebook could be an option as well}
     \end{column}
     \begin{column}{.4\textwidth}
       \fontsize{4.5pt}{4.5pt}\selectfont
